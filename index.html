@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rishi Sood — AI Books | The Hello AI Series</title>
+    <meta name="description" content="The Hello AI Series by Rishi Sood — 3 practical books to take you from complete beginner to AI power user. Available on Amazon Kindle.">
+    <meta property="og:title" content="The Hello AI Series — Books by Rishi Sood">
+    <meta property="og:description" content="From your first AI conversation to building a daily habit to saving hours every week. Three books, one journey.">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #f7f8fc;
+            --bg-white: #ffffff;
+            --bg-light: #eef1f8;
+            --navy: #0d1b2a;
+            --navy-mid: #1e3a5f;
+            --teal: #0891b2;
+            --teal-light: #e0f2f7;
+            --teal-mid: rgba(8, 145, 178, 0.12);
+            --amber: #d97706;
+            --amber-light: #fef3c7;
+            --text: #1e293b;
+            --text-mid: #475569;
+            --text-light: #94a3b8;
+            --border: #e2e8f0;
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.1), 0 2px 6px rgba(0,0,0,0.06);
+            --shadow-book: 0 20px 60px rgba(13,27,42,0.18), 0 8px 24px rgba(13,27,42,0.12);
+            --max-width: 1100px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; transition: all 0.2s; }
+        img { display: block; max-width: 100%; }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section { padding: 100px 0; }
+
+        /* ── NAV ── */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(247, 248, 252, 0.92);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+            padding: 0;
+        }
+
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--navy);
+        }
+
+        .nav-logo-dot {
+            width: 10px; height: 10px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--teal), var(--amber));
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-mid);
+            padding: 6px 12px;
+            border-radius: var(--radius-sm);
+            transition: all 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--navy); background: var(--bg-light); }
+
+        .nav-cta {
+            background: var(--navy) !important;
+            color: white !important;
+            padding: 8px 18px !important;
+            border-radius: var(--radius-sm) !important;
+        }
+        .nav-cta:hover { background: var(--navy-mid) !important; }
+
+        .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+
+        /* ── HERO ── */
+        .hero {
+            padding: 80px 0 60px;
+            background: var(--bg-white);
+            border-bottom: 1px solid var(--border);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -100px; right: -200px;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(8,145,178,0.08) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            display: grid;
+            grid-template-columns: 1fr 520px;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--teal-light);
+            border: 1px solid rgba(8,145,178,0.2);
+            color: var(--teal);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 100px;
+            margin-bottom: 24px;
+            letter-spacing: 0.01em;
+        }
+
+        .hero h1 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: clamp(2.4rem, 5vw, 3.6rem);
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--teal);
+        }
+
+        .hero-sub {
+            font-size: 1.15rem;
+            color: var(--text-mid);
+            line-height: 1.7;
+            max-width: 460px;
+            margin-bottom: 36px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 36px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+        }
+
+        .hero-stat-num {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--navy);
+            letter-spacing: -0.02em;
+        }
+
+        .hero-stat-label {
+            font-size: 13px;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        /* Book stack visual */
+        .hero-books {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: 380px;
+            padding-bottom: 0;
+        }
+
+        .hero-book {
+            position: absolute;
+            border-radius: 8px;
+            box-shadow: var(--shadow-book);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-book-1 {
+            width: 155px;
+            bottom: 0; left: 30px;
+            transform: rotate(-6deg);
+            z-index: 1;
+        }
+
+        .hero-book-2 {
+            width: 170px;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) rotate(0deg);
+            z-index: 3;
+        }
+
+        .hero-book-3 {
+            width: 155px;
+            bottom: 0; right: 30px;
+            transform: rotate(6deg);
+            z-index: 2;
+        }
+
+        .hero-books:hover .hero-book-1 { transform: rotate(-10deg) translateY(-8px); }
+        .hero-books:hover .hero-book-3 { transform: rotate(10deg) translateY(-8px); }
+        .hero-books:hover .hero-book-2 { transform: translateX(-50%) translateY(-12px); }
+
+        /* ── BUTTONS ── */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 13px 26px;
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--navy);
+            color: white;
+        }
+        .btn-primary:hover { background: var(--navy-mid); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+
+        .btn-teal {
+            background: var(--teal);
+            color: white;
+        }
+        .btn-teal:hover { background: #0e7490; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(8,145,178,0.3); }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--navy);
+            border: 1.5px solid var(--border);
+        }
+        .btn-outline:hover { border-color: var(--navy); background: var(--bg-light); }
+
+        .btn-amazon {
+            background: #FF9900;
+            color: #0F1111;
+            font-weight: 700;
+        }
+        .btn-amazon:hover { background: #e68a00; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(255,153,0,0.3); }
+
+        /* ── JOURNEY BAR ── */
+        .journey {
+            background: var(--bg-light);
+            padding: 32px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .journey-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+        }
+
+        .journey-step {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 0 32px;
+        }
+
+        .journey-step:not(:last-child) {
+            border-right: 1px solid var(--border);
+        }
+
+        .journey-num {
+            width: 36px; height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .journey-num-1 { background: var(--teal-light); color: var(--teal); }
+        .journey-num-2 { background: rgba(217,119,6,0.12); color: var(--amber); }
+        .journey-num-3 { background: rgba(13,27,42,0.08); color: var(--navy); }
+
+        .journey-text strong { display: block; font-size: 14px; font-weight: 600; color: var(--navy); }
+        .journey-text span { font-size: 12px; color: var(--text-light); }
+
+        .journey-arrow { color: var(--text-light); font-size: 18px; padding: 0 8px; }
+
+        /* ── BOOKS SECTION ── */
+        .books { background: var(--bg-white); }
+
+        .books h2 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+            font-weight: 700;
+            color: var(--navy);
+            text-align: center;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+
+        .books-subtitle {
+            text-align: center;
+            color: var(--text-mid);
+            font-size: 1.05rem;
+            margin-bottom: 64px;
+        }
+
+        .book-card {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 48px;
+            align-items: start;
+            padding: 48px;
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            margin-bottom: 28px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .book-card:hover {
+            border-color: rgba(8,145,178,0.3);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        .book-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .book-card:nth-child(1)::before { background: linear-gradient(90deg, var(--teal), #38bdf8); }
+        .book-card:nth-child(2)::before { background: linear-gradient(90deg, var(--amber), #fbbf24); }
+        .book-card:nth-child(3)::before { background: linear-gradient(90deg, var(--navy), var(--teal)); }
+        .book-card:hover::before { opacity: 1; }
+
+        .book-cover-wrap {
+            position: relative;
+        }
+
+        .book-cover {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: var(--shadow-book);
+            transition: transform 0.3s;
+        }
+
+        .book-card:hover .book-cover { transform: scale(1.02) rotate(-1deg); }
+
+        .book-badge {
+            position: absolute;
+            top: -10px; right: -10px;
+            background: var(--amber);
+            color: white;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 100px;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .book-content { padding-top: 4px; }
+
+        .book-series-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--teal);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 12px;
+        }
+
+        .book-content h3 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1.2;
+            margin-bottom: 6px;
+            letter-spacing: -0.02em;
+        }
+
+        .book-subtitle {
+            font-size: 15px;
+            color: var(--text-mid);
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .book-tagline {
+            display: inline-block;
+            background: var(--bg-light);
+            border-left: 3px solid var(--teal);
+            padding: 8px 14px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text);
+            font-style: italic;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            margin-bottom: 20px;
+        }
+
+        .book-desc {
+            font-size: 15px;
+            color: var(--text-mid);
+            line-height: 1.75;
+            margin-bottom: 28px;
+        }
+
+        .book-tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 28px;
+        }
+
+        .tool-tag {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--teal);
+            background: var(--teal-mid);
+            border: 1px solid rgba(8,145,178,0.15);
+            padding: 4px 12px;
+            border-radius: 100px;
+        }
+
+        .book-actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+
+        /* ── AUTHOR ── */
+        .author {
+            background: var(--navy);
+            color: white;
+        }
+
+        .author-inner {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .author-photo {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            object-position: center 15%;
+            border-radius: var(--radius-lg);
+            border: 3px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .author-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--teal);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .author-label::before { content: ''; display: block; width: 20px; height: 1px; background: var(--teal); }
+
+        .author-text h2 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: clamp(1.8rem, 3vw, 2.4rem);
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .author-text p {
+            font-size: 15px;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .author-meta {
+            display: flex;
+            gap: 24px;
+            margin-top: 32px;
+            flex-wrap: wrap;
+        }
+
+        .author-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .author-meta-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--teal); flex-shrink: 0; }
+
+        .author-meta-item a { color: rgba(255,255,255,0.7); }
+        .author-meta-item a:hover { color: var(--teal); }
+
+        .author-actions { margin-top: 36px; display: flex; gap: 12px; flex-wrap: wrap; }
+
+        /* ── RESEARCH BRIDGE ── */
+        .bridge {
+            background: var(--bg-light);
+            padding: 60px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .bridge-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            padding: 40px 48px;
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bridge-inner::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 4px; height: 100%;
+            background: linear-gradient(to bottom, var(--teal), var(--amber));
+        }
+
+        .bridge-text { padding-left: 16px; }
+        .bridge-text h3 { font-size: 1.2rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+        .bridge-text p { font-size: 14px; color: var(--text-mid); max-width: 520px; line-height: 1.6; }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--navy);
+            color: rgba(255,255,255,0.5);
+            padding: 32px 0;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+        }
+
+        footer p { font-size: 13px; }
+
+        .footer-links { display: flex; gap: 20px; }
+        .footer-links a { font-size: 13px; color: rgba(255,255,255,0.4); }
+        .footer-links a:hover { color: var(--teal); }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 900px) {
+            .hero-inner { grid-template-columns: 1fr; }
+            .hero-books { height: 300px; margin-top: 40px; }
+            .hero-book-1 { width: 130px; left: 10px; }
+            .hero-book-2 { width: 150px; }
+            .hero-book-3 { width: 130px; right: 10px; }
+            .author-inner { grid-template-columns: 1fr; }
+            .author-photo { width: 200px; }
+            .bridge-inner { flex-direction: column; text-align: center; }
+            .bridge-inner::before { width: 100%; height: 4px; top: 0; left: 0; }
+            .bridge-text { padding-left: 0; padding-top: 12px; }
+        }
+
+        @media (max-width: 700px) {
+            section { padding: 64px 0; }
+            .book-card { grid-template-columns: 1fr; padding: 32px 24px; }
+            .book-cover-wrap { display: flex; justify-content: center; }
+            .book-cover-wrap img { width: 180px; }
+            .journey-inner { flex-direction: column; gap: 16px; }
+            .journey-step { border-right: none; }
+            .journey-arrow { display: none; }
+            .footer-inner { flex-direction: column; text-align: center; }
+            .nav-links { display: none; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: white; padding: 16px 24px; border-bottom: 1px solid var(--border); gap: 4px; }
+            .nav-links.open { display: flex; }
+            .mobile-menu-btn { display: block; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <div class="nav-inner">
+        <a href="#" class="nav-logo">
+            <span class="nav-logo-dot"></span>
+            Rishi Sood · AI Books
+        </a>
+        <button class="mobile-menu-btn" onclick="document.getElementById('navLinks').classList.toggle('open')">
+            <svg width="22" height="22" fill="none" stroke="#1e293b" stroke-width="2" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#books">Books</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="https://livingframework.github.io" target="_blank">Research</a></li>
+            <li><a href="https://www.amazon.co.uk/stores/Rishi-Sood/author/B0GTC7NXP2" target="_blank" class="nav-cta">Amazon Store →</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-inner">
+            <div class="hero-text">
+                <div class="hero-badge">✦ The Hello AI Series</div>
+                <h1>Learn AI the way it <em>actually</em> works</h1>
+                <p class="hero-sub">Three practical books that take you from your very first AI conversation to saving hours every week. No jargon. No fluff. Just what works.</p>
+                <div class="hero-actions">
+                    <a href="#books" class="btn btn-primary">See the Books →</a>
+                    <a href="https://www.amazon.co.uk/stores/Rishi-Sood/author/B0GTC7NXP2" target="_blank" class="btn btn-outline">View on Amazon</a>
+                </div>
+                <div class="hero-stats">
+                    <div>
+                        <div class="hero-stat-num">3</div>
+                        <div class="hero-stat-label">Books in the Series</div>
+                    </div>
+                    <div>
+                        <div class="hero-stat-num">12</div>
+                        <div class="hero-stat-label">Books Total</div>
+                    </div>
+                    <div>
+                        <div class="hero-stat-num">8</div>
+                        <div class="hero-stat-label">Research Papers</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-books">
+                <img src="./hello-ai.jpg" alt="Hello AI — Book 1" class="hero-book hero-book-1">
+                <img src="./the-ai-habit.jpg" alt="The AI Habit — Book 2" class="hero-book hero-book-2">
+                <img src="./ai-heavy-lifting.jpg" alt="AI Does The Heavy Lifting — Book 3" class="hero-book hero-book-3">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- JOURNEY BAR -->
+<div class="journey">
+    <div class="container">
+        <div class="journey-inner">
+            <div class="journey-step">
+                <div class="journey-num journey-num-1">1</div>
+                <div class="journey-text">
+                    <strong>Start Here</strong>
+                    <span>Your first conversation with AI</span>
+                </div>
+            </div>
+            <div class="journey-arrow">→</div>
+            <div class="journey-step">
+                <div class="journey-num journey-num-2">2</div>
+                <div class="journey-text">
+                    <strong>Build the Habit</strong>
+                    <span>7 days to make AI automatic</span>
+                </div>
+            </div>
+            <div class="journey-arrow">→</div>
+            <div class="journey-step">
+                <div class="journey-num journey-num-3">3</div>
+                <div class="journey-text">
+                    <strong>Save Hours Weekly</strong>
+                    <span>Copy-paste productivity hacks</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- BOOKS -->
+<section class="books" id="books">
+    <div class="container">
+        <h2>The Hello AI Series</h2>
+        <p class="books-subtitle">Three books. One complete journey. Available now on Amazon Kindle.</p>
+
+        <!-- Book 1 -->
+        <div class="book-card">
+            <div class="book-cover-wrap">
+                <img src="./hello-ai.jpg" alt="Hello AI" class="book-cover">
+                <span class="book-badge">Start Here</span>
+            </div>
+            <div class="book-content">
+                <div class="book-series-tag">
+                    <span>●</span> The Hello AI Series — Book 1
+                </div>
+                <h3>Hello AI</h3>
+                <p class="book-subtitle">Your First Real Conversation With ChatGPT, Claude and the Tools Everyone's Using</p>
+                <p class="book-tagline">A practical beginner's guide to AI tools</p>
+                <p class="book-desc">Nervous about AI? Not sure where to start? This book walks you through your very first real conversation with AI — no technical background required. You'll learn how to talk to ChatGPT, Claude, and Gemini, ask the right questions, and turn AI into a genuinely useful daily tool. Practical exercises included.</p>
+                <div class="book-tools">
+                    <span class="tool-tag">ChatGPT</span>
+                    <span class="tool-tag">Claude</span>
+                    <span class="tool-tag">Gemini</span>
+                    <span class="tool-tag">Beginner-friendly</span>
+                    <span class="tool-tag">No coding required</span>
+                </div>
+                <div class="book-actions">
+                    <a href="https://www.amazon.co.uk/Hello-AI-Conversation-ChatGPT-Everyones-ebook/dp/B0GTR267MM" target="_blank" class="btn btn-amazon">Buy on Amazon Kindle</a>
+                    <a href="https://www.amazon.co.uk/stores/Rishi-Sood/author/B0GTC7NXP2" target="_blank" class="btn btn-outline">Author Store</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 2 -->
+        <div class="book-card">
+            <div class="book-cover-wrap">
+                <img src="./the-ai-habit.jpg" alt="The AI Habit" class="book-cover">
+            </div>
+            <div class="book-content">
+                <div class="book-series-tag">
+                    <span>●</span> The Hello AI Series — Book 2
+                </div>
+                <h3>The AI Habit</h3>
+                <p class="book-subtitle">Build a 7-Day Practice That Changes How You Work Forever</p>
+                <p class="book-tagline">Seven days. Seven skills. One new habit.</p>
+                <p class="book-desc">Knowing about AI and actually using it every day are two very different things. This book fixes that gap. Seven days, seven skills, each building on the last — until using AI feels as natural as checking your email. The habit forms through doing, not reading about it.</p>
+                <div class="book-tools">
+                    <span class="tool-tag">ChatGPT</span>
+                    <span class="tool-tag">Claude</span>
+                    <span class="tool-tag">Gemini</span>
+                    <span class="tool-tag">7-day structure</span>
+                    <span class="tool-tag">Habit formation</span>
+                </div>
+                <div class="book-actions">
+                    <a href="https://www.amazon.co.uk/AI-Habit-Practice-Changes-Forever-ebook/dp/B0GTQWDFKT" target="_blank" class="btn btn-amazon">Buy on Amazon Kindle</a>
+                    <a href="https://www.amazon.co.uk/stores/Rishi-Sood/author/B0GTC7NXP2" target="_blank" class="btn btn-outline">Author Store</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 3 -->
+        <div class="book-card">
+            <div class="book-cover-wrap">
+                <img src="./ai-heavy-lifting.jpg" alt="AI Does The Heavy Lifting" class="book-cover">
+            </div>
+            <div class="book-content">
+                <div class="book-series-tag">
+                    <span>●</span> The Hello AI Series — Book 3
+                </div>
+                <h3>AI Does The Heavy Lifting</h3>
+                <p class="book-subtitle">Productivity Hacks Using ChatGPT, Claude and Others</p>
+                <p class="book-tagline">Copy. Paste. Save hours every week.</p>
+                <p class="book-desc">You've got the habit. Now put it to work. 20 copy-paste prompts across email, writing, research, planning, and decisions — with realistic time-saving estimates for each. This is the book where AI stops being impressive and starts being indispensable.</p>
+                <div class="book-tools">
+                    <span class="tool-tag">ChatGPT</span>
+                    <span class="tool-tag">Claude</span>
+                    <span class="tool-tag">Gemini</span>
+                    <span class="tool-tag">Perplexity</span>
+                    <span class="tool-tag">20 ready prompts</span>
+                </div>
+                <div class="book-actions">
+                    <a href="https://www.amazon.co.uk/Does-Heavy-Lifting-Productivity-Perplexity-ebook/dp/B0GTR26MSL" target="_blank" class="btn btn-amazon">Buy on Amazon Kindle</a>
+                    <a href="https://www.amazon.co.uk/stores/Rishi-Sood/author/B0GTC7NXP2" target="_blank" class="btn btn-outline">Author Store</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- AUTHOR -->
+<section class="author" id="about">
+    <div class="container">
+        <div class="author-inner">
+            <div>
+                <img src="./rishi-sood.jpg" alt="Rishi Sood" class="author-photo">
+            </div>
+            <div class="author-text">
+                <div class="author-label">About the Author</div>
+                <h2>Rishi Sood</h2>
+                <p>I'm an independent researcher who has spent 18 months working with AI systems more seriously than most — documenting every failure, every fix, and every breakthrough along the way.</p>
+                <p>The Hello AI Series is for everyone who wants to stop being intimidated by AI and start using it as the powerful tool it actually is. No technical background needed. No jargon. Just honest, practical guidance grounded in real experience.</p>
+                <p>Alongside these books, I've published 8 peer-reviewed papers on AI governance and long-horizon collaboration — freely available to anyone who wants to go deeper.</p>
+                <div class="author-meta">
+                    <div class="author-meta-item">
+                        <span class="author-meta-dot"></span>
+                        <span>8 Research Papers Published</span>
+                    </div>
+                    <div class="author-meta-item">
+                        <span class="author-meta-dot"></span>
+                        <span>AI Governance Researcher</span>
+                    </div>
+                    <div class="author-meta-item">
+                        <span class="author-meta-dot"></span>
+                        <a href="https://orcid.org/0009-0008-6479-4061" target="_blank">ORCID Verified</a>
+                    </div>
+                    <div class="author-meta-item">
+                        <span class="author-meta-dot"></span>
+                        <a href="https://twitter.com/satoshisats" target="_blank">@satoshisats on X</a>
+                    </div>
+                </div>
+                <div class="author-actions">
+                    <a href="https://www.amazon.co.uk/stores/Rishi-Sood/author/B0GTC7NXP2" target="_blank" class="btn btn-teal">View All Books on Amazon →</a>
+                    <a href="https://livingframework.github.io" target="_blank" class="btn btn-outline" style="color:white; border-color:rgba(255,255,255,0.25);">Read the Research</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- RESEARCH BRIDGE -->
+<div class="bridge">
+    <div class="container">
+        <div class="bridge-inner">
+            <div class="bridge-text">
+                <h3>These books are backed by serious research</h3>
+                <p>The Hello AI Series draws on 18 months of documented, peer-reviewed research into how humans and AI can collaborate reliably over time. If you want to go beyond the practical and understand the science — the research is free, open access, and waiting for you.</p>
+            </div>
+            <a href="https://livingframework.github.io" target="_blank" class="btn btn-primary" style="white-space:nowrap; flex-shrink:0;">
+                Visit Living Framework →
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-inner">
+            <p>© 2026 Rishi Sood. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://www.amazon.co.uk/stores/Rishi-Sood/author/B0GTC7NXP2" target="_blank">Amazon Store</a>
+                <a href="https://livingframework.github.io" target="_blank">Research</a>
+                <a href="https://twitter.com/satoshisats" target="_blank">X</a>
+                <a href="https://orcid.org/0009-0008-6479-4061" target="_blank">ORCID</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
