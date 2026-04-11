@@ -1,903 +1,893 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rishi Sood — AI Books | The Hello AI Series</title>
-    <meta name="description" content="The Hello AI Series by Rishi Sood — 3 practical books to take you from complete beginner to AI power user. Available on Amazon Kindle.">
-    <meta property="og:title" content="The Hello AI Series — Books by Rishi Sood">
-    <meta property="og:description" content="From your first AI conversation to building a daily habit to saving hours every week. Three books, one journey.">
-    <meta property="og:type" content="website">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --bg: #f7f8fc;
-            --bg-white: #ffffff;
-            --bg-light: #eef1f8;
-            --navy: #0d1b2a;
-            --navy-mid: #1e3a5f;
-            --teal: #0891b2;
-            --teal-light: #e0f2f7;
-            --teal-mid: rgba(8, 145, 178, 0.12);
-            --amber: #d97706;
-            --amber-light: #fef3c7;
-            --text: #1e293b;
-            --text-mid: #475569;
-            --text-light: #94a3b8;
-            --border: #e2e8f0;
-            --radius-sm: 8px;
-            --radius-md: 16px;
-            --radius-lg: 24px;
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
-            --shadow-md: 0 4px 16px rgba(0,0,0,0.1), 0 2px 6px rgba(0,0,0,0.06);
-            --shadow-book: 0 20px 60px rgba(13,27,42,0.18), 0 8px 24px rgba(13,27,42,0.12);
-            --max-width: 1100px;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-
-        body {
-            font-family: 'Inter', -apple-system, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-        }
-
-        a { text-decoration: none; color: inherit; transition: all 0.2s; }
-        img { display: block; max-width: 100%; }
-
-        .container {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        section { padding: 100px 0; }
-
-        /* ── NAV ── */
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(247, 248, 252, 0.92);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--border);
-            padding: 0;
-        }
-
-        .nav-inner {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 24px;
-            height: 64px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 700;
-            font-size: 1rem;
-            color: var(--navy);
-        }
-
-        .nav-logo-dot {
-            width: 10px; height: 10px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--teal), var(--amber));
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            font-size: 14px;
-            font-weight: 500;
-            color: var(--text-mid);
-            padding: 6px 12px;
-            border-radius: var(--radius-sm);
-            transition: all 0.2s;
-        }
-
-        .nav-links a:hover { color: var(--navy); background: var(--bg-light); }
-
-        .nav-cta {
-            background: var(--navy) !important;
-            color: white !important;
-            padding: 8px 18px !important;
-            border-radius: var(--radius-sm) !important;
-        }
-        .nav-cta:hover { background: var(--navy-mid) !important; }
-
-        .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
-
-        /* ── HERO ── */
-        .hero {
-            padding: 80px 0 60px;
-            background: var(--bg-white);
-            border-bottom: 1px solid var(--border);
-            overflow: hidden;
-            position: relative;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -100px; right: -200px;
-            width: 600px; height: 600px;
-            background: radial-gradient(circle, rgba(8,145,178,0.08) 0%, transparent 65%);
-            pointer-events: none;
-        }
-
-        .hero-inner {
-            display: grid;
-            grid-template-columns: 1fr 520px;
-            gap: 64px;
-            align-items: center;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--teal-light);
-            border: 1px solid rgba(8,145,178,0.2);
-            color: var(--teal);
-            font-size: 13px;
-            font-weight: 600;
-            padding: 6px 14px;
-            border-radius: 100px;
-            margin-bottom: 24px;
-            letter-spacing: 0.01em;
-        }
-
-        .hero h1 {
-            font-family: 'Fraunces', Georgia, serif;
-            font-size: clamp(2.4rem, 5vw, 3.6rem);
-            font-weight: 700;
-            color: var(--navy);
-            line-height: 1.15;
-            letter-spacing: -0.02em;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 em {
-            font-style: italic;
-            color: var(--teal);
-        }
-
-        .hero-sub {
-            font-size: 1.15rem;
-            color: var(--text-mid);
-            line-height: 1.7;
-            max-width: 460px;
-            margin-bottom: 36px;
-        }
-
-        .hero-actions {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin-bottom: 48px;
-        }
-
-        .hero-stats {
-            display: flex;
-            gap: 36px;
-            padding-top: 32px;
-            border-top: 1px solid var(--border);
-        }
-
-        .hero-stat-num {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--navy);
-            letter-spacing: -0.02em;
-        }
-
-        .hero-stat-label {
-            font-size: 13px;
-            color: var(--text-light);
-            font-weight: 500;
-        }
-
-        /* Book stack visual */
-        .hero-books {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            height: 380px;
-            padding-bottom: 0;
-        }
-
-        .hero-book {
-            position: absolute;
-            border-radius: 8px;
-            box-shadow: var(--shadow-book);
-            transition: transform 0.3s ease;
-        }
-
-        .hero-book-1 {
-            width: 155px;
-            bottom: 0; left: 30px;
-            transform: rotate(-6deg);
-            z-index: 1;
-        }
-
-        .hero-book-2 {
-            width: 170px;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%) rotate(0deg);
-            z-index: 3;
-        }
-
-        .hero-book-3 {
-            width: 155px;
-            bottom: 0; right: 30px;
-            transform: rotate(6deg);
-            z-index: 2;
-        }
-
-        .hero-books:hover .hero-book-1 { transform: rotate(-10deg) translateY(-8px); }
-        .hero-books:hover .hero-book-3 { transform: rotate(10deg) translateY(-8px); }
-        .hero-books:hover .hero-book-2 { transform: translateX(-50%) translateY(-12px); }
-
-        /* ── BUTTONS ── */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 13px 26px;
-            font-family: 'Inter', sans-serif;
-            font-size: 15px;
-            font-weight: 600;
-            border-radius: var(--radius-sm);
-            cursor: pointer;
-            transition: all 0.2s;
-            border: none;
-        }
-
-        .btn-primary {
-            background: var(--navy);
-            color: white;
-        }
-        .btn-primary:hover { background: var(--navy-mid); transform: translateY(-1px); box-shadow: var(--shadow-md); }
-
-        .btn-teal {
-            background: var(--teal);
-            color: white;
-        }
-        .btn-teal:hover { background: #0e7490; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(8,145,178,0.3); }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--navy);
-            border: 1.5px solid var(--border);
-        }
-        .btn-outline:hover { border-color: var(--navy); background: var(--bg-light); }
-
-        .btn-amazon {
-            background: #FF9900;
-            color: #0F1111;
-            font-weight: 700;
-        }
-        .btn-amazon:hover { background: #e68a00; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(255,153,0,0.3); }
-
-        /* ── JOURNEY BAR ── */
-        .journey {
-            background: var(--bg-light);
-            padding: 32px 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .journey-inner {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0;
-        }
-
-        .journey-step {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            padding: 0 32px;
-        }
-
-        .journey-step:not(:last-child) {
-            border-right: 1px solid var(--border);
-        }
-
-        .journey-num {
-            width: 36px; height: 36px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 13px;
-            font-weight: 700;
-            flex-shrink: 0;
-        }
-
-        .journey-num-1 { background: var(--teal-light); color: var(--teal); }
-        .journey-num-2 { background: rgba(217,119,6,0.12); color: var(--amber); }
-        .journey-num-3 { background: rgba(13,27,42,0.08); color: var(--navy); }
-
-        .journey-text strong { display: block; font-size: 14px; font-weight: 600; color: var(--navy); }
-        .journey-text span { font-size: 12px; color: var(--text-light); }
-
-        .journey-arrow { color: var(--text-light); font-size: 18px; padding: 0 8px; }
-
-        /* ── BOOKS SECTION ── */
-        .books { background: var(--bg-white); }
-
-        .books h2 {
-            font-family: 'Fraunces', Georgia, serif;
-            font-size: clamp(1.8rem, 3.5vw, 2.4rem);
-            font-weight: 700;
-            color: var(--navy);
-            text-align: center;
-            margin-bottom: 12px;
-            letter-spacing: -0.02em;
-        }
-
-        .books-subtitle {
-            text-align: center;
-            color: var(--text-mid);
-            font-size: 1.05rem;
-            margin-bottom: 64px;
-        }
-
-        .book-card {
-            display: grid;
-            grid-template-columns: 220px 1fr;
-            gap: 48px;
-            align-items: start;
-            padding: 48px;
-            background: var(--bg-white);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            margin-bottom: 28px;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .book-card:hover {
-            border-color: rgba(8,145,178,0.3);
-            box-shadow: var(--shadow-md);
-            transform: translateY(-2px);
-        }
-
-        .book-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 3px;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        .book-card:nth-child(1)::before { background: linear-gradient(90deg, var(--teal), #38bdf8); }
-        .book-card:nth-child(2)::before { background: linear-gradient(90deg, var(--amber), #fbbf24); }
-        .book-card:nth-child(3)::before { background: linear-gradient(90deg, var(--navy), var(--teal)); }
-        .book-card:hover::before { opacity: 1; }
-
-        .book-cover-wrap {
-            position: relative;
-        }
-
-        .book-cover {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: var(--shadow-book);
-            transition: transform 0.3s;
-        }
-
-        .book-card:hover .book-cover { transform: scale(1.02) rotate(-1deg); }
-
-        .book-badge {
-            position: absolute;
-            top: -10px; right: -10px;
-            background: var(--amber);
-            color: white;
-            font-size: 11px;
-            font-weight: 700;
-            padding: 4px 10px;
-            border-radius: 100px;
-            letter-spacing: 0.03em;
-            text-transform: uppercase;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .book-content { padding-top: 4px; }
-
-        .book-series-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 12px;
-            font-weight: 600;
-            color: var(--teal);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            margin-bottom: 12px;
-        }
-
-        .book-content h3 {
-            font-family: 'Fraunces', Georgia, serif;
-            font-size: 1.7rem;
-            font-weight: 700;
-            color: var(--navy);
-            line-height: 1.2;
-            margin-bottom: 6px;
-            letter-spacing: -0.02em;
-        }
-
-        .book-subtitle {
-            font-size: 15px;
-            color: var(--text-mid);
-            margin-bottom: 16px;
-            line-height: 1.5;
-        }
-
-        .book-tagline {
-            display: inline-block;
-            background: var(--bg-light);
-            border-left: 3px solid var(--teal);
-            padding: 8px 14px;
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--text);
-            font-style: italic;
-            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-            margin-bottom: 20px;
-        }
-
-        .book-desc {
-            font-size: 15px;
-            color: var(--text-mid);
-            line-height: 1.75;
-            margin-bottom: 28px;
-        }
-
-        .book-tools {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 28px;
-        }
-
-        .tool-tag {
-            font-size: 12px;
-            font-weight: 500;
-            color: var(--teal);
-            background: var(--teal-mid);
-            border: 1px solid rgba(8,145,178,0.15);
-            padding: 4px 12px;
-            border-radius: 100px;
-        }
-
-        .book-actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
-
-        /* ── AUTHOR ── */
-        .author {
-            background: var(--navy);
-            color: white;
-        }
-
-        .author-inner {
-            display: grid;
-            grid-template-columns: 280px 1fr;
-            gap: 64px;
-            align-items: center;
-        }
-
-        .author-photo {
-            width: 100%;
-            aspect-ratio: 1/1;
-            object-fit: cover;
-            object-position: center 15%;
-            border-radius: var(--radius-lg);
-            border: 3px solid rgba(255,255,255,0.1);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-        }
-
-        .author-label {
-            font-size: 12px;
-            font-weight: 600;
-            color: var(--teal);
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .author-label::before { content: ''; display: block; width: 20px; height: 1px; background: var(--teal); }
-
-        .author-text h2 {
-            font-family: 'Fraunces', Georgia, serif;
-            font-size: clamp(1.8rem, 3vw, 2.4rem);
-            font-weight: 700;
-            color: white;
-            margin-bottom: 20px;
-            letter-spacing: -0.02em;
-        }
-
-        .author-text p {
-            font-size: 15px;
-            color: rgba(255,255,255,0.7);
-            line-height: 1.8;
-            margin-bottom: 16px;
-        }
-
-        .author-meta {
-            display: flex;
-            gap: 24px;
-            margin-top: 32px;
-            flex-wrap: wrap;
-        }
-
-        .author-meta-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 13px;
-            color: rgba(255,255,255,0.5);
-        }
-
-        .author-meta-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--teal); flex-shrink: 0; }
-
-        .author-meta-item a { color: rgba(255,255,255,0.7); }
-        .author-meta-item a:hover { color: var(--teal); }
-
-        .author-actions { margin-top: 36px; display: flex; gap: 12px; flex-wrap: wrap; }
-
-        /* ── RESEARCH BRIDGE ── */
-        .bridge {
-            background: var(--bg-light);
-            padding: 60px 0;
-            border-top: 1px solid var(--border);
-        }
-
-        .bridge-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 40px;
-            padding: 40px 48px;
-            background: var(--bg-white);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .bridge-inner::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0;
-            width: 4px; height: 100%;
-            background: linear-gradient(to bottom, var(--teal), var(--amber));
-        }
-
-        .bridge-text { padding-left: 16px; }
-        .bridge-text h3 { font-size: 1.2rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
-        .bridge-text p { font-size: 14px; color: var(--text-mid); max-width: 520px; line-height: 1.6; }
-
-        /* ── FOOTER ── */
-        footer {
-            background: var(--navy);
-            color: rgba(255,255,255,0.5);
-            padding: 32px 0;
-            border-top: 1px solid rgba(255,255,255,0.06);
-        }
-
-        .footer-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 24px;
-        }
-
-        footer p { font-size: 13px; }
-
-        .footer-links { display: flex; gap: 20px; }
-        .footer-links a { font-size: 13px; color: rgba(255,255,255,0.4); }
-        .footer-links a:hover { color: var(--teal); }
-
-        /* ── RESPONSIVE ── */
-        @media (max-width: 900px) {
-            .hero-inner { grid-template-columns: 1fr; }
-            .hero-books { height: 300px; margin-top: 40px; }
-            .hero-book-1 { width: 130px; left: 10px; }
-            .hero-book-2 { width: 150px; }
-            .hero-book-3 { width: 130px; right: 10px; }
-            .author-inner { grid-template-columns: 1fr; }
-            .author-photo { width: 200px; }
-            .bridge-inner { flex-direction: column; text-align: center; }
-            .bridge-inner::before { width: 100%; height: 4px; top: 0; left: 0; }
-            .bridge-text { padding-left: 0; padding-top: 12px; }
-        }
-
-        @media (max-width: 700px) {
-            section { padding: 64px 0; }
-            .book-card { grid-template-columns: 1fr; padding: 32px 24px; }
-            .book-cover-wrap { display: flex; justify-content: center; }
-            .book-cover-wrap img { width: 180px; }
-            .journey-inner { flex-direction: column; gap: 16px; }
-            .journey-step { border-right: none; }
-            .journey-arrow { display: none; }
-            .footer-inner { flex-direction: column; text-align: center; }
-            .nav-links { display: none; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: white; padding: 16px 24px; border-bottom: 1px solid var(--border); gap: 4px; }
-            .nav-links.open { display: flex; }
-            .mobile-menu-btn { display: block; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rishi Sood — AI Books on Amazon Kindle</title>
+  <meta name="description" content="12 practical AI books by Rishi Sood — from everyday beginners to professionals. Available on Amazon Kindle.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:ital,wght@0,300;0,600;0,700;1,300;1,600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0d1b2a;
+      --navy-mid: #1a2f45;
+      --navy-soft: #243b55;
+      --teal: #0891b2;
+      --teal-light: #22d3ee;
+      --amber: #d97706;
+      --amber-light: #fbbf24;
+      --cream: #faf9f6;
+      --off-white: #f7f8fc;
+      --text: #1e293b;
+      --text-mid: #475569;
+      --text-soft: #94a3b8;
+      --border: #e2e8f0;
+      --card-bg: #ffffff;
+      --radius: 16px;
+      --shadow: 0 4px 24px rgba(13,27,42,0.08);
+      --shadow-hover: 0 12px 40px rgba(13,27,42,0.15);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--off-white);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(13,27,42,0.96);
+      backdrop-filter: blur(12px);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .nav-brand {
+      font-family: 'Fraunces', serif;
+      font-size: 1.15rem;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+    .nav-brand span { color: var(--teal-light); }
+    .nav-links {
+      display: flex;
+      gap: 1.75rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--teal-light); }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 50%, #1e3a5f 100%);
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(8,145,178,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(8,145,178,0.15);
+      border: 1px solid rgba(8,145,178,0.3);
+      color: var(--teal-light);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--teal-light);
+    }
+    .hero-sub {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.7);
+      max-width: 560px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+    .stat { text-align: center; }
+    .stat-num {
+      display: block;
+      font-family: 'Fraunces', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--amber-light);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.55);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: 0.25rem;
+    }
+
+    /* COVER FAN */
+    .fan-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 0;
+      margin: 3rem auto 0;
+      max-width: 420px;
+      height: 200px;
+      position: relative;
+    }
+    .fan-book {
+      width: 90px;
+      height: 130px;
+      border-radius: 4px;
+      object-fit: cover;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
+      position: absolute;
+      bottom: 0;
+    }
+    .fan-book:nth-child(1) { left: 20px; transform: rotate(-15deg) translateY(10px); z-index: 1; }
+    .fan-book:nth-child(2) { left: 80px; transform: rotate(-7deg) translateY(4px); z-index: 2; }
+    .fan-book:nth-child(3) { left: 140px; transform: rotate(0deg); z-index: 3; }
+    .fan-book:nth-child(4) { left: 200px; transform: rotate(7deg) translateY(4px); z-index: 2; }
+    .fan-book:nth-child(5) { left: 260px; transform: rotate(15deg) translateY(10px); z-index: 1; }
+    .fan-wrap:hover .fan-book:nth-child(1) { transform: rotate(-18deg) translateY(16px) translateX(-6px); }
+    .fan-wrap:hover .fan-book:nth-child(2) { transform: rotate(-9deg) translateY(8px); }
+    .fan-wrap:hover .fan-book:nth-child(3) { transform: rotate(0deg) translateY(-8px); }
+    .fan-wrap:hover .fan-book:nth-child(4) { transform: rotate(9deg) translateY(8px); }
+    .fan-wrap:hover .fan-book:nth-child(5) { transform: rotate(18deg) translateY(16px) translateX(6px); }
+
+    /* SECTION WRAPPER */
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4.5rem 2rem;
+    }
+
+    .section-header {
+      margin-bottom: 2.5rem;
+    }
+    .section-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.85rem;
+      border-radius: 100px;
+      margin-bottom: 0.75rem;
+    }
+    .tag-teal { background: rgba(8,145,178,0.12); color: var(--teal); }
+    .tag-amber { background: rgba(217,119,6,0.12); color: var(--amber); }
+    .tag-navy { background: rgba(13,27,42,0.08); color: var(--navy); }
+
+    .section-header h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.6rem;
+    }
+    .section-header p {
+      color: var(--text-mid);
+      font-size: 1rem;
+      max-width: 520px;
+      line-height: 1.7;
+    }
+
+    /* BOOK GRID */
+    .book-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .book-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--border);
+    }
+    .book-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .book-cover-wrap {
+      position: relative;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      background: #e2e8f0;
+    }
+    .book-cover-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      transition: transform 0.35s ease;
+    }
+    .book-card:hover .book-cover-wrap img {
+      transform: scale(1.04);
+    }
+    .book-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(13,27,42,0.85);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      text-transform: uppercase;
+      backdrop-filter: blur(4px);
+    }
+    .badge-teal { background: rgba(8,145,178,0.9); }
+    .badge-amber { background: rgba(217,119,6,0.9); }
+
+    .book-body {
+      padding: 1.25rem 1.25rem 1rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .book-title {
+      font-family: 'Fraunces', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.3;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
+    }
+    .book-desc {
+      font-size: 0.875rem;
+      color: var(--text-mid);
+      line-height: 1.6;
+      flex: 1;
+      margin-bottom: 1rem;
+    }
+    .book-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-bottom: 1rem;
+    }
+    .book-tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+      background: var(--off-white);
+      color: var(--text-mid);
+      border: 1px solid var(--border);
+    }
+    .btn-amazon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: var(--amber);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 600;
+      padding: 0.7rem 1rem;
+      border-radius: 10px;
+      transition: background 0.2s, transform 0.15s;
+      letter-spacing: 0.01em;
+    }
+    .btn-amazon:hover {
+      background: #b45309;
+      transform: translateY(-1px);
+    }
+    .btn-amazon svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+    /* DIVIDER */
+    .section-divider {
+      border: none;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--border) 20%, var(--border) 80%, transparent);
+      margin: 0 2rem;
+    }
+
+    /* AUTHOR */
+    .author-section {
+      background: var(--navy);
+      padding: 5rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .author-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 80% at 10% 50%, rgba(8,145,178,0.12) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .author-inner {
+      max-width: 780px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+    }
+    .author-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--teal) 0%, var(--navy-soft) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      font-family: 'Fraunces', serif;
+      font-size: 2rem;
+      color: #fff;
+      font-weight: 700;
+      border: 3px solid rgba(8,145,178,0.4);
+    }
+    .author-name {
+      font-family: 'Fraunces', serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.35rem;
+      letter-spacing: -0.02em;
+    }
+    .author-role {
+      font-size: 0.9rem;
+      color: var(--teal-light);
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      margin-bottom: 1.5rem;
+    }
+    .author-bio {
+      color: rgba(255,255,255,0.72);
+      line-height: 1.8;
+      font-size: 0.975rem;
+      margin-bottom: 2rem;
+    }
+    .author-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .author-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.55rem 1.2rem;
+      border-radius: 10px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .link-teal {
+      background: rgba(8,145,178,0.2);
+      color: var(--teal-light);
+      border: 1px solid rgba(8,145,178,0.35);
+    }
+    .link-teal:hover { background: rgba(8,145,178,0.35); }
+    .link-white {
+      background: rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.85);
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .link-white:hover { background: rgba(255,255,255,0.15); }
+
+    /* RESEARCH BRIDGE */
+    .bridge-section {
+      background: linear-gradient(135deg, #0f2744 0%, var(--navy-mid) 100%);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .bridge-inner { max-width: 640px; margin: 0 auto; }
+    .bridge-icon {
+      width: 56px;
+      height: 56px;
+      background: rgba(8,145,178,0.15);
+      border: 1px solid rgba(8,145,178,0.3);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+    }
+    .bridge-icon svg { width: 26px; height: 26px; color: var(--teal-light); }
+    .bridge-section h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+    .bridge-section p {
+      color: rgba(255,255,255,0.65);
+      line-height: 1.75;
+      margin-bottom: 1.75rem;
+    }
+    .btn-research {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(8,145,178,0.2);
+      border: 1px solid rgba(8,145,178,0.4);
+      color: var(--teal-light);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.75rem 1.75rem;
+      border-radius: 12px;
+      transition: all 0.2s;
+    }
+    .btn-research:hover {
+      background: rgba(8,145,178,0.35);
+      transform: translateY(-2px);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 2rem;
+      text-align: center;
+    }
+    footer p {
+      color: rgba(255,255,255,0.35);
+      font-size: 0.825rem;
+      line-height: 1.7;
+    }
+    footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+    footer a:hover { color: var(--teal-light); }
+
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .hero { padding: 3.5rem 1.25rem 3rem; }
+      .hero-stats { gap: 2rem; }
+      .section { padding: 3rem 1.25rem; }
+      .book-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.25rem; }
+      .fan-wrap { max-width: 320px; height: 160px; }
+      .fan-book { width: 72px; height: 104px; }
+      .fan-book:nth-child(1) { left: 14px; }
+      .fan-book:nth-child(2) { left: 62px; }
+      .fan-book:nth-child(3) { left: 110px; }
+      .fan-book:nth-child(4) { left: 158px; }
+      .fan-book:nth-child(5) { left: 206px; }
+    }
+  </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-    <div class="nav-inner">
-        <a href="#" class="nav-logo">
-            <span class="nav-logo-dot"></span>
-            Rishi Sood · AI Books
-        </a>
-        <button class="mobile-menu-btn" onclick="document.getElementById('navLinks').classList.toggle('open')">
-            <svg width="22" height="22" fill="none" stroke="#1e293b" stroke-width="2" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-        </button>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#books">Books</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="https://livingframework.github.io" target="_blank">Research</a></li>
-            <li><a href="https://www.amazon.co.uk/stores/Rishi-Sood/author/B0GTC7NXP2" target="_blank" class="nav-cta">Amazon Store →</a></li>
-        </ul>
-    </div>
+  <a class="nav-brand" href="#">Rishi Sood <span>Books</span></a>
+  <ul class="nav-links">
+    <li><a href="#hello-ai">Hello AI Series</a></li>
+    <li><a href="#standalone">Standalone</a></li>
+    <li><a href="#professional">Professional</a></li>
+    <li><a href="https://livingframework.github.io" target="_blank">Research &rarr;</a></li>
+  </ul>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-    <div class="container">
-        <div class="hero-inner">
-            <div class="hero-text">
-                <div class="hero-badge">✦ The Hello AI Series</div>
-                <h1>Learn AI the way it <em>actually</em> works</h1>
-                <p class="hero-sub">Three practical books that take you from your very first AI conversation to saving hours every week. No jargon. No fluff. Just what works.</p>
-                <div class="hero-actions">
-                    <a href="#books" class="btn btn-primary">See the Books →</a>
-                    <a href="https://www.amazon.co.uk/stores/Rishi-Sood/author/B0GTC7NXP2" target="_blank" class="btn btn-outline">View on Amazon</a>
-                </div>
-                <div class="hero-stats">
-                    <div>
-                        <div class="hero-stat-num">3</div>
-                        <div class="hero-stat-label">Books in the Series</div>
-                    </div>
-                    <div>
-                        <div class="hero-stat-num">12</div>
-                        <div class="hero-stat-label">Books Total</div>
-                    </div>
-                    <div>
-                        <div class="hero-stat-num">8</div>
-                        <div class="hero-stat-label">Research Papers</div>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-books">
-                <img src="./hello-ai.jpg" alt="Hello AI — Book 1" class="hero-book hero-book-1">
-                <img src="./the-ai-habit.jpg" alt="The AI Habit — Book 2" class="hero-book hero-book-2">
-                <img src="./ai-heavy-lifting.jpg" alt="AI Does The Heavy Lifting — Book 3" class="hero-book hero-book-3">
-            </div>
-        </div>
+  <div class="hero-eyebrow">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
+    Available on Amazon Kindle
+  </div>
+  <h1>AI Made Practical,<br><em>For Everyone</em></h1>
+  <p class="hero-sub">12 books that take the fear out of AI &mdash; written for real people, in plain language, from first encounter to professional mastery.</p>
+
+  <div class="fan-wrap">
+    <img src="hello-ai.jpg" alt="Hello AI" class="fan-book">
+    <img src="the-ai-habit.jpg" alt="The AI Habit" class="fan-book">
+    <img src="managers-handbook.jpg" alt="The Manager's Handbook" class="fan-book">
+    <img src="hr-ai-playbook.jpg" alt="HR AI Playbook" class="fan-book">
+    <img src="teachers-ai-playbook.jpg" alt="Teacher's AI Playbook" class="fan-book">
+  </div>
+
+  <div class="hero-stats" style="margin-top: 3.5rem;">
+    <div class="stat">
+      <span class="stat-num">12</span>
+      <span class="stat-label">Books Published</span>
     </div>
+    <div class="stat">
+      <span class="stat-num">3</span>
+      <span class="stat-label">Series</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">8+</span>
+      <span class="stat-label">Research Papers</span>
+    </div>
+  </div>
 </section>
 
-<!-- JOURNEY BAR -->
-<div class="journey">
-    <div class="container">
-        <div class="journey-inner">
-            <div class="journey-step">
-                <div class="journey-num journey-num-1">1</div>
-                <div class="journey-text">
-                    <strong>Start Here</strong>
-                    <span>Your first conversation with AI</span>
-                </div>
-            </div>
-            <div class="journey-arrow">→</div>
-            <div class="journey-step">
-                <div class="journey-num journey-num-2">2</div>
-                <div class="journey-text">
-                    <strong>Build the Habit</strong>
-                    <span>7 days to make AI automatic</span>
-                </div>
-            </div>
-            <div class="journey-arrow">→</div>
-            <div class="journey-step">
-                <div class="journey-num journey-num-3">3</div>
-                <div class="journey-text">
-                    <strong>Save Hours Weekly</strong>
-                    <span>Copy-paste productivity hacks</span>
-                </div>
-            </div>
+<!-- HELLO AI SERIES -->
+<section class="section" id="hello-ai">
+  <div class="section-header">
+    <span class="section-tag tag-teal">Hello AI Series</span>
+    <h2>Start Your AI Journey Here</h2>
+    <p>Three beginner-friendly books that ease you into AI with no technical background required &mdash; just curiosity.</p>
+  </div>
+  <div class="book-grid">
+
+    <div class="book-card">
+      <div class="book-cover-wrap">
+        <img src="hello-ai.jpg" alt="Hello AI">
+        <span class="book-badge badge-teal">Series &middot; 1 of 3</span>
+      </div>
+      <div class="book-body">
+        <div class="book-title">Hello AI</div>
+        <p class="book-desc">Your very first step into the world of artificial intelligence. No jargon, no fear &mdash; just a clear, friendly guide to what AI is and how it fits into your life.</p>
+        <div class="book-tags">
+          <span class="book-tag">Beginner</span>
+          <span class="book-tag">Introduction</span>
+          <span class="book-tag">Everyday AI</span>
         </div>
+        <a class="btn-amazon" href="https://www.amazon.com/dp/B0GTR267MM" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.958 10.09c0 1.232.029 2.256-.591 3.351-.502.891-1.301 1.44-2.186 1.44-1.214 0-1.922-.924-1.922-2.292 0-2.692 2.415-3.182 4.699-3.182v.683zm3.186 7.705c-.209.189-.512.201-.745.074-1.047-.872-1.236-1.276-1.814-2.106-1.734 1.768-2.962 2.297-5.209 2.297-2.661 0-4.731-1.641-4.731-4.925 0-2.565 1.391-4.309 3.37-5.164 1.715-.754 4.11-.889 5.942-1.095v-.41c0-.753.06-1.642-.383-2.294-.385-.579-1.124-.82-1.775-.82-1.205 0-2.277.618-2.54 1.897-.054.285-.261.567-.549.582l-3.061-.33c-.259-.058-.548-.266-.472-.66C6.232 1.44 9.332.5 12.025.5c1.388 0 3.202.369 4.296 1.42 1.388 1.298 1.255 3.032 1.255 4.918v4.459c0 1.341.557 1.93 1.081 2.655.185.259.225.573-.011.769l-2.502 2.074zm3.939 3.18c.287-.196.272-.558.013-.724-2.09-1.557-4.813-1.875-7.002-1.875-1.995 0-4.395.339-6.214 1.06-.345.136-.536.535-.258.778.276.237.646.077.928-.034 1.703-.591 3.748-.874 5.544-.874 1.965 0 4.408.339 6.135 1.269.28.149.594.25.854.4z"/></svg>
+          Read on Kindle
+        </a>
+      </div>
     </div>
-</div>
 
-<!-- BOOKS -->
-<section class="books" id="books">
-    <div class="container">
-        <h2>The Hello AI Series</h2>
-        <p class="books-subtitle">Three books. One complete journey. Available now on Amazon Kindle.</p>
-
-        <!-- Book 1 -->
-        <div class="book-card">
-            <div class="book-cover-wrap">
-                <img src="./hello-ai.jpg" alt="Hello AI" class="book-cover">
-                <span class="book-badge">Start Here</span>
-            </div>
-            <div class="book-content">
-                <div class="book-series-tag">
-                    <span>●</span> The Hello AI Series — Book 1
-                </div>
-                <h3>Hello AI</h3>
-                <p class="book-subtitle">Your First Real Conversation With ChatGPT, Claude and the Tools Everyone's Using</p>
-                <p class="book-tagline">A practical beginner's guide to AI tools</p>
-                <p class="book-desc">Nervous about AI? Not sure where to start? This book walks you through your very first real conversation with AI — no technical background required. You'll learn how to talk to ChatGPT, Claude, and Gemini, ask the right questions, and turn AI into a genuinely useful daily tool. Practical exercises included.</p>
-                <div class="book-tools">
-                    <span class="tool-tag">ChatGPT</span>
-                    <span class="tool-tag">Claude</span>
-                    <span class="tool-tag">Gemini</span>
-                    <span class="tool-tag">Beginner-friendly</span>
-                    <span class="tool-tag">No coding required</span>
-                </div>
-                <div class="book-actions">
-                    <a href="https://www.amazon.co.uk/Hello-AI-Conversation-ChatGPT-Everyones-ebook/dp/B0GTR267MM" target="_blank" class="btn btn-amazon">Buy on Amazon Kindle</a>
-                    <a href="https://www.amazon.co.uk/stores/Rishi-Sood/author/B0GTC7NXP2" target="_blank" class="btn btn-outline">Author Store</a>
-                </div>
-            </div>
+    <div class="book-card">
+      <div class="book-cover-wrap">
+        <img src="the-ai-habit.jpg" alt="The AI Habit">
+        <span class="book-badge badge-teal">Series &middot; 2 of 3</span>
+      </div>
+      <div class="book-body">
+        <div class="book-title">The AI Habit</div>
+        <p class="book-desc">Build daily AI practices that stick. Learn how to weave AI tools into your routine so they become second nature &mdash; saving you time every single day.</p>
+        <div class="book-tags">
+          <span class="book-tag">Habits</span>
+          <span class="book-tag">Productivity</span>
+          <span class="book-tag">Daily Practice</span>
         </div>
-
-        <!-- Book 2 -->
-        <div class="book-card">
-            <div class="book-cover-wrap">
-                <img src="./the-ai-habit.jpg" alt="The AI Habit" class="book-cover">
-            </div>
-            <div class="book-content">
-                <div class="book-series-tag">
-                    <span>●</span> The Hello AI Series — Book 2
-                </div>
-                <h3>The AI Habit</h3>
-                <p class="book-subtitle">Build a 7-Day Practice That Changes How You Work Forever</p>
-                <p class="book-tagline">Seven days. Seven skills. One new habit.</p>
-                <p class="book-desc">Knowing about AI and actually using it every day are two very different things. This book fixes that gap. Seven days, seven skills, each building on the last — until using AI feels as natural as checking your email. The habit forms through doing, not reading about it.</p>
-                <div class="book-tools">
-                    <span class="tool-tag">ChatGPT</span>
-                    <span class="tool-tag">Claude</span>
-                    <span class="tool-tag">Gemini</span>
-                    <span class="tool-tag">7-day structure</span>
-                    <span class="tool-tag">Habit formation</span>
-                </div>
-                <div class="book-actions">
-                    <a href="https://www.amazon.co.uk/AI-Habit-Practice-Changes-Forever-ebook/dp/B0GTQWDFKT" target="_blank" class="btn btn-amazon">Buy on Amazon Kindle</a>
-                    <a href="https://www.amazon.co.uk/stores/Rishi-Sood/author/B0GTC7NXP2" target="_blank" class="btn btn-outline">Author Store</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Book 3 -->
-        <div class="book-card">
-            <div class="book-cover-wrap">
-                <img src="./ai-heavy-lifting.jpg" alt="AI Does The Heavy Lifting" class="book-cover">
-            </div>
-            <div class="book-content">
-                <div class="book-series-tag">
-                    <span>●</span> The Hello AI Series — Book 3
-                </div>
-                <h3>AI Does The Heavy Lifting</h3>
-                <p class="book-subtitle">Productivity Hacks Using ChatGPT, Claude and Others</p>
-                <p class="book-tagline">Copy. Paste. Save hours every week.</p>
-                <p class="book-desc">You've got the habit. Now put it to work. 20 copy-paste prompts across email, writing, research, planning, and decisions — with realistic time-saving estimates for each. This is the book where AI stops being impressive and starts being indispensable.</p>
-                <div class="book-tools">
-                    <span class="tool-tag">ChatGPT</span>
-                    <span class="tool-tag">Claude</span>
-                    <span class="tool-tag">Gemini</span>
-                    <span class="tool-tag">Perplexity</span>
-                    <span class="tool-tag">20 ready prompts</span>
-                </div>
-                <div class="book-actions">
-                    <a href="https://www.amazon.co.uk/Does-Heavy-Lifting-Productivity-Perplexity-ebook/dp/B0GTR26MSL" target="_blank" class="btn btn-amazon">Buy on Amazon Kindle</a>
-                    <a href="https://www.amazon.co.uk/stores/Rishi-Sood/author/B0GTC7NXP2" target="_blank" class="btn btn-outline">Author Store</a>
-                </div>
-            </div>
-        </div>
-
+        <a class="btn-amazon" href="https://www.amazon.com/dp/B0GTQWDFKT" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.958 10.09c0 1.232.029 2.256-.591 3.351-.502.891-1.301 1.44-2.186 1.44-1.214 0-1.922-.924-1.922-2.292 0-2.692 2.415-3.182 4.699-3.182v.683zm3.186 7.705c-.209.189-.512.201-.745.074-1.047-.872-1.236-1.276-1.814-2.106-1.734 1.768-2.962 2.297-5.209 2.297-2.661 0-4.731-1.641-4.731-4.925 0-2.565 1.391-4.309 3.37-5.164 1.715-.754 4.11-.889 5.942-1.095v-.41c0-.753.06-1.642-.383-2.294-.385-.579-1.124-.82-1.775-.82-1.205 0-2.277.618-2.54 1.897-.054.285-.261.567-.549.582l-3.061-.33c-.259-.058-.548-.266-.472-.66C6.232 1.44 9.332.5 12.025.5c1.388 0 3.202.369 4.296 1.42 1.388 1.298 1.255 3.032 1.255 4.918v4.459c0 1.341.557 1.93 1.081 2.655.185.259.225.573-.011.769l-2.502 2.074zm3.939 3.18c.287-.196.272-.558.013-.724-2.09-1.557-4.813-1.875-7.002-1.875-1.995 0-4.395.339-6.214 1.06-.345.136-.536.535-.258.778.276.237.646.077.928-.034 1.703-.591 3.748-.874 5.544-.874 1.965 0 4.408.339 6.135 1.269.28.149.594.25.854.4z"/></svg>
+          Read on Kindle
+        </a>
+      </div>
     </div>
+
+    <div class="book-card">
+      <div class="book-cover-wrap">
+        <img src="ai-heavy-lifting.jpg" alt="AI Does the Heavy Lifting">
+        <span class="book-badge badge-teal">Series &middot; 3 of 3</span>
+      </div>
+      <div class="book-body">
+        <div class="book-title">AI Does the Heavy Lifting</div>
+        <p class="book-desc">Stop doing everything the hard way. Discover how to delegate the tedious, time-consuming work to AI so you can focus on what actually matters.</p>
+        <div class="book-tags">
+          <span class="book-tag">Automation</span>
+          <span class="book-tag">Time-Saving</span>
+          <span class="book-tag">Delegation</span>
+        </div>
+        <a class="btn-amazon" href="https://www.amazon.com/dp/B0GTR26MSL" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.958 10.09c0 1.232.029 2.256-.591 3.351-.502.891-1.301 1.44-2.186 1.44-1.214 0-1.922-.924-1.922-2.292 0-2.692 2.415-3.182 4.699-3.182v.683zm3.186 7.705c-.209.189-.512.201-.745.074-1.047-.872-1.236-1.276-1.814-2.106-1.734 1.768-2.962 2.297-5.209 2.297-2.661 0-4.731-1.641-4.731-4.925 0-2.565 1.391-4.309 3.37-5.164 1.715-.754 4.11-.889 5.942-1.095v-.41c0-.753.06-1.642-.383-2.294-.385-.579-1.124-.82-1.775-.82-1.205 0-2.277.618-2.54 1.897-.054.285-.261.567-.549.582l-3.061-.33c-.259-.058-.548-.266-.472-.66C6.232 1.44 9.332.5 12.025.5c1.388 0 3.202.369 4.296 1.42 1.388 1.298 1.255 3.032 1.255 4.918v4.459c0 1.341.557 1.93 1.081 2.655.185.259.225.573-.011.769l-2.502 2.074zm3.939 3.18c.287-.196.272-.558.013-.724-2.09-1.557-4.813-1.875-7.002-1.875-1.995 0-4.395.339-6.214 1.06-.345.136-.536.535-.258.778.276.237.646.077.928-.034 1.703-.591 3.748-.874 5.544-.874 1.965 0 4.408.339 6.135 1.269.28.149.594.25.854.4z"/></svg>
+          Read on Kindle
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- STANDALONE TITLES -->
+<section class="section" id="standalone">
+  <div class="section-header">
+    <span class="section-tag tag-amber">Standalone Titles</span>
+    <h2>Deeper Dives, Broader Thinking</h2>
+    <p>Three standalone books that explore specific aspects of AI for anyone who wants to think and work more strategically.</p>
+  </div>
+  <div class="book-grid">
+
+    <div class="book-card">
+      <div class="book-cover-wrap">
+        <img src="managers-handbook.jpg" alt="The Manager's Handbook">
+        <span class="book-badge badge-amber">Standalone</span>
+      </div>
+      <div class="book-body">
+        <div class="book-title">The Manager&rsquo;s Handbook</div>
+        <p class="book-desc">A practical guide for managers navigating AI adoption &mdash; from leading AI-augmented teams to making smarter decisions with data. Built for the modern workplace.</p>
+        <div class="book-tags">
+          <span class="book-tag">Management</span>
+          <span class="book-tag">Leadership</span>
+          <span class="book-tag">Teams</span>
+        </div>
+        <a class="btn-amazon" href="https://www.amazon.com/dp/B0GTGJGY3Z" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.958 10.09c0 1.232.029 2.256-.591 3.351-.502.891-1.301 1.44-2.186 1.44-1.214 0-1.922-.924-1.922-2.292 0-2.692 2.415-3.182 4.699-3.182v.683zm3.186 7.705c-.209.189-.512.201-.745.074-1.047-.872-1.236-1.276-1.814-2.106-1.734 1.768-2.962 2.297-5.209 2.297-2.661 0-4.731-1.641-4.731-4.925 0-2.565 1.391-4.309 3.37-5.164 1.715-.754 4.11-.889 5.942-1.095v-.41c0-.753.06-1.642-.383-2.294-.385-.579-1.124-.82-1.775-.82-1.205 0-2.277.618-2.54 1.897-.054.285-.261.567-.549.582l-3.061-.33c-.259-.058-.548-.266-.472-.66C6.232 1.44 9.332.5 12.025.5c1.388 0 3.202.369 4.296 1.42 1.388 1.298 1.255 3.032 1.255 4.918v4.459c0 1.341.557 1.93 1.081 2.655.185.259.225.573-.011.769l-2.502 2.074zm3.939 3.18c.287-.196.272-.558.013-.724-2.09-1.557-4.813-1.875-7.002-1.875-1.995 0-4.395.339-6.214 1.06-.345.136-.536.535-.258.778.276.237.646.077.928-.034 1.703-.591 3.748-.874 5.544-.874 1.965 0 4.408.339 6.135 1.269.28.149.594.25.854.4z"/></svg>
+          Read on Kindle
+        </a>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <div class="book-cover-wrap">
+        <img src="talk-to-ai-pro.jpg" alt="Talk to AI Like a Pro">
+        <span class="book-badge badge-amber">Standalone</span>
+      </div>
+      <div class="book-body">
+        <div class="book-title">Talk to AI Like a Pro</div>
+        <p class="book-desc">Master the art of prompting. Learn how to communicate with AI tools in a way that consistently gets you better results, faster &mdash; whatever you&rsquo;re working on.</p>
+        <div class="book-tags">
+          <span class="book-tag">Prompting</span>
+          <span class="book-tag">Communication</span>
+          <span class="book-tag">ChatGPT</span>
+        </div>
+        <a class="btn-amazon" href="https://www.amazon.com/dp/B0GHT9VV85" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.958 10.09c0 1.232.029 2.256-.591 3.351-.502.891-1.301 1.44-2.186 1.44-1.214 0-1.922-.924-1.922-2.292 0-2.692 2.415-3.182 4.699-3.182v.683zm3.186 7.705c-.209.189-.512.201-.745.074-1.047-.872-1.236-1.276-1.814-2.106-1.734 1.768-2.962 2.297-5.209 2.297-2.661 0-4.731-1.641-4.731-4.925 0-2.565 1.391-4.309 3.37-5.164 1.715-.754 4.11-.889 5.942-1.095v-.41c0-.753.06-1.642-.383-2.294-.385-.579-1.124-.82-1.775-.82-1.205 0-2.277.618-2.54 1.897-.054.285-.261.567-.549.582l-3.061-.33c-.259-.058-.548-.266-.472-.66C6.232 1.44 9.332.5 12.025.5c1.388 0 3.202.369 4.296 1.42 1.388 1.298 1.255 3.032 1.255 4.918v4.459c0 1.341.557 1.93 1.081 2.655.185.259.225.573-.011.769l-2.502 2.074zm3.939 3.18c.287-.196.272-.558.013-.724-2.09-1.557-4.813-1.875-7.002-1.875-1.995 0-4.395.339-6.214 1.06-.345.136-.536.535-.258.778.276.237.646.077.928-.034 1.703-.591 3.748-.874 5.544-.874 1.965 0 4.408.339 6.135 1.269.28.149.594.25.854.4z"/></svg>
+          Read on Kindle
+        </a>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <div class="book-cover-wrap">
+        <img src="ai-wont-remember.jpg" alt="AI Won't Remember You Tomorrow">
+        <span class="book-badge badge-amber">Standalone</span>
+      </div>
+      <div class="book-body">
+        <div class="book-title">AI Won&rsquo;t Remember You Tomorrow</div>
+        <p class="book-desc">A fascinating look at AI memory, context, and the human side of working with machines that reset. Understand your tools deeply &mdash; and work with them more wisely.</p>
+        <div class="book-tags">
+          <span class="book-tag">AI Psychology</span>
+          <span class="book-tag">Context</span>
+          <span class="book-tag">Memory</span>
+        </div>
+        <a class="btn-amazon" href="https://www.amazon.com/dp/B0GT1MTRMM" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.958 10.09c0 1.232.029 2.256-.591 3.351-.502.891-1.301 1.44-2.186 1.44-1.214 0-1.922-.924-1.922-2.292 0-2.692 2.415-3.182 4.699-3.182v.683zm3.186 7.705c-.209.189-.512.201-.745.074-1.047-.872-1.236-1.276-1.814-2.106-1.734 1.768-2.962 2.297-5.209 2.297-2.661 0-4.731-1.641-4.731-4.925 0-2.565 1.391-4.309 3.37-5.164 1.715-.754 4.11-.889 5.942-1.095v-.41c0-.753.06-1.642-.383-2.294-.385-.579-1.124-.82-1.775-.82-1.205 0-2.277.618-2.54 1.897-.054.285-.261.567-.549.582l-3.061-.33c-.259-.058-.548-.266-.472-.66C6.232 1.44 9.332.5 12.025.5c1.388 0 3.202.369 4.296 1.42 1.388 1.298 1.255 3.032 1.255 4.918v4.459c0 1.341.557 1.93 1.081 2.655.185.259.225.573-.011.769l-2.502 2.074zm3.939 3.18c.287-.196.272-.558.013-.724-2.09-1.557-4.813-1.875-7.002-1.875-1.995 0-4.395.339-6.214 1.06-.345.136-.536.535-.258.778.276.237.646.077.928-.034 1.703-.591 3.748-.874 5.544-.874 1.965 0 4.408.339 6.135 1.269.28.149.594.25.854.4z"/></svg>
+          Read on Kindle
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- AI FOR PROFESSIONALS -->
+<section class="section" id="professional">
+  <div class="section-header">
+    <span class="section-tag tag-navy">AI for Professionals</span>
+    <h2>Your Industry. Your AI Advantage.</h2>
+    <p>Six role-specific playbooks written for professionals who want to apply AI directly to the challenges of their field &mdash; no detours, no filler.</p>
+  </div>
+  <div class="book-grid">
+
+    <div class="book-card">
+      <div class="book-cover-wrap">
+        <img src="administrators-playbook.jpg" alt="The Administrator's AI Playbook">
+        <span class="book-badge">Professional</span>
+      </div>
+      <div class="book-body">
+        <div class="book-title">The Administrator&rsquo;s AI Playbook</div>
+        <p class="book-desc">Built for administrators who manage operations, scheduling, and communications. Practical AI workflows to reduce admin burden and increase accuracy.</p>
+        <div class="book-tags">
+          <span class="book-tag">Administration</span>
+          <span class="book-tag">Operations</span>
+          <span class="book-tag">Workflows</span>
+        </div>
+        <a class="btn-amazon" href="https://www.amazon.com/dp/B0GTYL5JC9" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.958 10.09c0 1.232.029 2.256-.591 3.351-.502.891-1.301 1.44-2.186 1.44-1.214 0-1.922-.924-1.922-2.292 0-2.692 2.415-3.182 4.699-3.182v.683zm3.186 7.705c-.209.189-.512.201-.745.074-1.047-.872-1.236-1.276-1.814-2.106-1.734 1.768-2.962 2.297-5.209 2.297-2.661 0-4.731-1.641-4.731-4.925 0-2.565 1.391-4.309 3.37-5.164 1.715-.754 4.11-.889 5.942-1.095v-.41c0-.753.06-1.642-.383-2.294-.385-.579-1.124-.82-1.775-.82-1.205 0-2.277.618-2.54 1.897-.054.285-.261.567-.549.582l-3.061-.33c-.259-.058-.548-.266-.472-.66C6.232 1.44 9.332.5 12.025.5c1.388 0 3.202.369 4.296 1.42 1.388 1.298 1.255 3.032 1.255 4.918v4.459c0 1.341.557 1.93 1.081 2.655.185.259.225.573-.011.769l-2.502 2.074zm3.939 3.18c.287-.196.272-.558.013-.724-2.09-1.557-4.813-1.875-7.002-1.875-1.995 0-4.395.339-6.214 1.06-.345.136-.536.535-.258.778.276.237.646.077.928-.034 1.703-.591 3.748-.874 5.544-.874 1.965 0 4.408.339 6.135 1.269.28.149.594.25.854.4z"/></svg>
+          Read on Kindle
+        </a>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <div class="book-cover-wrap">
+        <img src="managers-ai-playbook.jpg" alt="The Manager's AI Playbook">
+        <span class="book-badge">Professional</span>
+      </div>
+      <div class="book-body">
+        <div class="book-title">The Manager&rsquo;s AI Playbook</div>
+        <p class="book-desc">For managers who want to lead confidently in an AI-first world. Covers performance, delegation, communication, and building high-performing AI-augmented teams.</p>
+        <div class="book-tags">
+          <span class="book-tag">Management</span>
+          <span class="book-tag">AI Teams</span>
+          <span class="book-tag">Performance</span>
+        </div>
+        <a class="btn-amazon" href="https://www.amazon.com/dp/B0GTYFXGQC" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.958 10.09c0 1.232.029 2.256-.591 3.351-.502.891-1.301 1.44-2.186 1.44-1.214 0-1.922-.924-1.922-2.292 0-2.692 2.415-3.182 4.699-3.182v.683zm3.186 7.705c-.209.189-.512.201-.745.074-1.047-.872-1.236-1.276-1.814-2.106-1.734 1.768-2.962 2.297-5.209 2.297-2.661 0-4.731-1.641-4.731-4.925 0-2.565 1.391-4.309 3.37-5.164 1.715-.754 4.11-.889 5.942-1.095v-.41c0-.753.go-1.642-.383-2.294-.385-.579-1.124-.82-1.775-.82-1.205 0-2.277.618-2.54 1.897-.054.285-.261.567-.549.582l-3.061-.33c-.259-.058-.548-.266-.472-.66C6.232 1.44 9.332.5 12.025.5c1.388 0 3.202.369 4.296 1.42 1.388 1.298 1.255 3.032 1.255 4.918v4.459c0 1.341.557 1.93 1.081 2.655.185.259.225.573-.011.769l-2.502 2.074zm3.939 3.18c.287-.196.272-.558.013-.724-2.09-1.557-4.813-1.875-7.002-1.875-1.995 0-4.395.339-6.214 1.06-.345.136-.536.535-.258.778.276.237.646.077.928-.034 1.703-.591 3.748-.874 5.544-.874 1.965 0 4.408.339 6.135 1.269.28.149.594.25.854.4z"/></svg>
+          Read on Kindle
+        </a>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <div class="book-cover-wrap">
+        <img src="recruiters-ai-edge.jpg" alt="The Recruiter's AI Edge">
+        <span class="book-badge">Professional</span>
+      </div>
+      <div class="book-body">
+        <div class="book-title">The Recruiter&rsquo;s AI Edge</div>
+        <p class="book-desc">For talent professionals ready to supercharge their pipeline. Use AI to write better job descriptions, screen faster, and identify the best candidates with less effort.</p>
+        <div class="book-tags">
+          <span class="book-tag">Recruitment</span>
+          <span class="book-tag">Talent</span>
+          <span class="book-tag">HR Tech</span>
+        </div>
+        <a class="btn-amazon" href="https://www.amazon.com/dp/B0GTYQV6CD" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.958 10.09c0 1.232.029 2.256-.591 3.351-.502.891-1.301 1.44-2.186 1.44-1.214 0-1.922-.924-1.922-2.292 0-2.692 2.415-3.182 4.699-3.182v.683zm3.186 7.705c-.209.189-.512.201-.745.074-1.047-.872-1.236-1.276-1.814-2.106-1.734 1.768-2.962 2.297-5.209 2.297-2.661 0-4.731-1.641-4.731-4.925 0-2.565 1.391-4.309 3.37-5.164 1.715-.754 4.11-.889 5.942-1.095v-.41c0-.753.06-1.642-.383-2.294-.385-.579-1.124-.82-1.775-.82-1.205 0-2.277.618-2.54 1.897-.054.285-.261.567-.549.582l-3.061-.33c-.259-.058-.548-.266-.472-.66C6.232 1.44 9.332.5 12.025.5c1.388 0 3.202.369 4.296 1.42 1.388 1.298 1.255 3.032 1.255 4.918v4.459c0 1.341.557 1.93 1.081 2.655.185.259.225.573-.011.769l-2.502 2.074zm3.939 3.18c.287-.196.272-.558.013-.724-2.09-1.557-4.813-1.875-7.002-1.875-1.995 0-4.395.339-6.214 1.06-.345.136-.536.535-.258.778.276.237.646.077.928-.034 1.703-.591 3.748-.874 5.544-.874 1.965 0 4.408.339 6.135 1.269.28.149.594.25.854.4z"/></svg>
+          Read on Kindle
+        </a>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <div class="book-cover-wrap">
+        <img src="lawyers-ai-handbook.jpg" alt="The Lawyer's AI Handbook">
+        <span class="book-badge">Professional</span>
+      </div>
+      <div class="book-body">
+        <div class="book-title">The Lawyer&rsquo;s AI Handbook</div>
+        <p class="book-desc">For legal professionals navigating AI in practice. From drafting and research to client communications &mdash; use AI confidently while staying on the right side of professional ethics.</p>
+        <div class="book-tags">
+          <span class="book-tag">Legal</span>
+          <span class="book-tag">Research</span>
+          <span class="book-tag">Drafting</span>
+        </div>
+        <a class="btn-amazon" href="https://www.amazon.co.uk/dp/B0GTWXZXXS" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.958 10.09c0 1.232.029 2.256-.591 3.351-.502.891-1.301 1.44-2.186 1.44-1.214 0-1.922-.924-1.922-2.292 0-2.692 2.415-3.182 4.699-3.182v.683zm3.186 7.705c-.209.189-.512.201-.745.074-1.047-.872-1.236-1.276-1.814-2.106-1.734 1.768-2.962 2.297-5.209 2.297-2.661 0-4.731-1.641-4.731-4.925 0-2.565 1.391-4.309 3.37-5.164 1.715-.754 4.11-.889 5.942-1.095v-.41c0-.753.06-1.642-.383-2.294-.385-.579-1.124-.82-1.775-.82-1.205 0-2.277.618-2.54 1.897-.054.285-.261.567-.549.582l-3.061-.33c-.259-.058-.548-.266-.472-.66C6.232 1.44 9.332.5 12.025.5c1.388 0 3.202.369 4.296 1.42 1.388 1.298 1.255 3.032 1.255 4.918v4.459c0 1.341.557 1.93 1.081 2.655.185.259.225.573-.011.769l-2.502 2.074zm3.939 3.18c.287-.196.272-.558.013-.724-2.09-1.557-4.813-1.875-7.002-1.875-1.995 0-4.395.339-6.214 1.06-.345.136-.536.535-.258.778.276.237.646.077.928-.034 1.703-.591 3.748-.874 5.544-.874 1.965 0 4.408.339 6.135 1.269.28.149.594.25.854.4z"/></svg>
+          Read on Kindle
+        </a>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <div class="book-cover-wrap">
+        <img src="teachers-ai-playbook.jpg" alt="The Teacher's AI Playbook">
+        <span class="book-badge">Professional</span>
+      </div>
+      <div class="book-body">
+        <div class="book-title">The Teacher&rsquo;s AI Playbook</div>
+        <p class="book-desc">For educators who want to use AI thoughtfully in the classroom and beyond. Plan lessons, give better feedback, differentiate learning, and reclaim your evenings.</p>
+        <div class="book-tags">
+          <span class="book-tag">Education</span>
+          <span class="book-tag">Lesson Plans</span>
+          <span class="book-tag">Feedback</span>
+        </div>
+        <a class="btn-amazon" href="https://www.amazon.co.uk/dp/B0GTQZPCV4" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.958 10.09c0 1.232.029 2.256-.591 3.351-.502.891-1.301 1.44-2.186 1.44-1.214 0-1.922-.924-1.922-2.292 0-2.692 2.415-3.182 4.699-3.182v.683zm3.186 7.705c-.209.189-.512.201-.745.074-1.047-.872-1.236-1.276-1.814-2.106-1.734 1.768-2.962 2.297-5.209 2.297-2.661 0-4.731-1.641-4.731-4.925 0-2.565 1.391-4.309 3.37-5.164 1.715-.754 4.11-.889 5.942-1.095v-.41c0-.753.06-1.642-.383-2.294-.385-.579-1.124-.82-1.775-.82-1.205 0-2.277.618-2.54 1.897-.054.285-.261.567-.549.582l-3.061-.33c-.259-.058-.548-.266-.472-.66C6.232 1.44 9.332.5 12.025.5c1.388 0 3.202.369 4.296 1.42 1.388 1.298 1.255 3.032 1.255 4.918v4.459c0 1.341.557 1.93 1.081 2.655.185.259.225.573-.011.769l-2.502 2.074zm3.939 3.18c.287-.196.272-.558.013-.724-2.09-1.557-4.813-1.875-7.002-1.875-1.995 0-4.395.339-6.214 1.06-.345.136-.536.535-.258.778.276.237.646.077.928-.034 1.703-.591 3.748-.874 5.544-.874 1.965 0 4.408.339 6.135 1.269.28.149.594.25.854.4z"/></svg>
+          Read on Kindle
+        </a>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <div class="book-cover-wrap">
+        <img src="hr-ai-playbook.jpg" alt="The HR Professional's AI Playbook">
+        <span class="book-badge">Professional</span>
+      </div>
+      <div class="book-body">
+        <div class="book-title">The HR Professional&rsquo;s AI Playbook</div>
+        <p class="book-desc">A complete AI toolkit for HR professionals. Streamline onboarding, sharpen performance conversations, and use AI ethically across the entire employee lifecycle.</p>
+        <div class="book-tags">
+          <span class="book-tag">HR</span>
+          <span class="book-tag">People Ops</span>
+          <span class="book-tag">Onboarding</span>
+        </div>
+        <a class="btn-amazon" href="https://www.amazon.com/dp/B0GTPSZB93" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.958 10.09c0 1.232.029 2.256-.591 3.351-.502.891-1.301 1.44-2.186 1.44-1.214 0-1.922-.924-1.922-2.292 0-2.692 2.415-3.182 4.699-3.182v.683zm3.186 7.705c-.209.189-.512.201-.745.074-1.047-.872-1.236-1.276-1.814-2.106-1.734 1.768-2.962 2.297-5.209 2.297-2.661 0-4.731-1.641-4.731-4.925 0-2.565 1.391-4.309 3.37-5.164 1.715-.754 4.11-.889 5.942-1.095v-.41c0-.753.06-1.642-.383-2.294-.385-.579-1.124-.82-1.775-.82-1.205 0-2.277.618-2.54 1.897-.054.285-.261.567-.549.582l-3.061-.33c-.259-.058-.548-.266-.472-.66C6.232 1.44 9.332.5 12.025.5c1.388 0 3.202.369 4.296 1.42 1.388 1.298 1.255 3.032 1.255 4.918v4.459c0 1.341.557 1.93 1.081 2.655.185.259.225.573-.011.769l-2.502 2.074zm3.939 3.18c.287-.196.272-.558.013-.724-2.09-1.557-4.813-1.875-7.002-1.875-1.995 0-4.395.339-6.214 1.06-.345.136-.536.535-.258.778.276.237.646.077.928-.034 1.703-.591 3.748-.874 5.544-.874 1.965 0 4.408.339 6.135 1.269.28.149.594.25.854.4z"/></svg>
+          Read on Kindle
+        </a>
+      </div>
+    </div>
+
+  </div>
 </section>
 
 <!-- AUTHOR -->
-<section class="author" id="about">
-    <div class="container">
-        <div class="author-inner">
-            <div>
-                <img src="./rishi-sood.jpg" alt="Rishi Sood" class="author-photo">
-            </div>
-            <div class="author-text">
-                <div class="author-label">About the Author</div>
-                <h2>Rishi Sood</h2>
-                <p>I'm an independent researcher who has spent 18 months working with AI systems more seriously than most — documenting every failure, every fix, and every breakthrough along the way.</p>
-                <p>The Hello AI Series is for everyone who wants to stop being intimidated by AI and start using it as the powerful tool it actually is. No technical background needed. No jargon. Just honest, practical guidance grounded in real experience.</p>
-                <p>Alongside these books, I've published 8 peer-reviewed papers on AI governance and long-horizon collaboration — freely available to anyone who wants to go deeper.</p>
-                <div class="author-meta">
-                    <div class="author-meta-item">
-                        <span class="author-meta-dot"></span>
-                        <span>8 Research Papers Published</span>
-                    </div>
-                    <div class="author-meta-item">
-                        <span class="author-meta-dot"></span>
-                        <span>AI Governance Researcher</span>
-                    </div>
-                    <div class="author-meta-item">
-                        <span class="author-meta-dot"></span>
-                        <a href="https://orcid.org/0009-0008-6479-4061" target="_blank">ORCID Verified</a>
-                    </div>
-                    <div class="author-meta-item">
-                        <span class="author-meta-dot"></span>
-                        <a href="https://twitter.com/satoshisats" target="_blank">@satoshisats on X</a>
-                    </div>
-                </div>
-                <div class="author-actions">
-                    <a href="https://www.amazon.co.uk/stores/Rishi-Sood/author/B0GTC7NXP2" target="_blank" class="btn btn-teal">View All Books on Amazon →</a>
-                    <a href="https://livingframework.github.io" target="_blank" class="btn btn-outline" style="color:white; border-color:rgba(255,255,255,0.25);">Read the Research</a>
-                </div>
-            </div>
-        </div>
+<section class="author-section" id="author">
+  <div class="author-inner">
+    <div class="author-avatar">RS</div>
+    <div class="author-name">Rishi Sood</div>
+    <div class="author-role">AI Researcher &middot; Author &middot; Educator</div>
+    <p class="author-bio">
+      I write about AI the way I wish someone had explained it to me &mdash; clearly, practically, without the hype.
+      Across 12 books and 8 published research papers, my mission has been the same: to bridge the gap between
+      what AI can do and what most people know it can do. Whether you&rsquo;re a curious beginner or a professional
+      wanting to work smarter, there&rsquo;s a book here for you. My research introduces the Living Framework &mdash;
+      a structured approach to human&ndash;AI interaction grounded in real evidence.
+    </p>
+    <div class="author-links">
+      <a class="author-link link-teal" href="https://livingframework.github.io" target="_blank">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        Research Website
+      </a>
+      <a class="author-link link-white" href="https://orcid.org/0009-0004-6884-1588" target="_blank">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>
+        ORCID Profile
+      </a>
+      <a class="author-link link-white" href="https://www.amazon.com/stores/author/B0GPFKMNKR" target="_blank">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        Amazon Author Page
+      </a>
     </div>
+  </div>
 </section>
 
 <!-- RESEARCH BRIDGE -->
-<div class="bridge">
-    <div class="container">
-        <div class="bridge-inner">
-            <div class="bridge-text">
-                <h3>These books are backed by serious research</h3>
-                <p>The Hello AI Series draws on 18 months of documented, peer-reviewed research into how humans and AI can collaborate reliably over time. If you want to go beyond the practical and understand the science — the research is free, open access, and waiting for you.</p>
-            </div>
-            <a href="https://livingframework.github.io" target="_blank" class="btn btn-primary" style="white-space:nowrap; flex-shrink:0;">
-                Visit Living Framework →
-            </a>
-        </div>
+<section class="bridge-section">
+  <div class="bridge-inner">
+    <div class="bridge-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" color="var(--teal-light)"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.44l-1.1-6a2.5 2.5 0 0 1 .47-1.92L9.5 2z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.44l1.1-6a2.5 2.5 0 0 0-.47-1.92L14.5 2z"/></svg>
     </div>
-</div>
+    <h3>Books Meet Research</h3>
+    <p>These books are not just practical guides &mdash; they&rsquo;re grounded in peer-reviewed academic research. The Living Framework, introduced in Rishi&rsquo;s research papers, underpins much of the thinking across this library.</p>
+    <a class="btn-research" href="https://livingframework.github.io" target="_blank">
+      Explore the Research
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer>
-    <div class="container">
-        <div class="footer-inner">
-            <p>© 2026 Rishi Sood. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="https://www.amazon.co.uk/stores/Rishi-Sood/author/B0GTC7NXP2" target="_blank">Amazon Store</a>
-                <a href="https://livingframework.github.io" target="_blank">Research</a>
-                <a href="https://twitter.com/satoshisats" target="_blank">X</a>
-                <a href="https://orcid.org/0009-0008-6479-4061" target="_blank">ORCID</a>
-            </div>
-        </div>
-    </div>
+  <p>&copy; 2025 Rishi Sood &middot; All rights reserved &middot; <a href="https://livingframework.github.io" target="_blank">Research</a> &middot; <a href="https://www.amazon.com/stores/author/B0GPFKMNKR" target="_blank">Amazon Author Page</a></p>
+  <p style="margin-top: 0.4rem;">Built with care &middot; Books available on <a href="https://www.amazon.com/stores/author/B0GPFKMNKR" target="_blank">Amazon Kindle</a></p>
 </footer>
 
 </body>
